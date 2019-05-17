@@ -67,13 +67,14 @@ export const deleteSmurf = id => dispatch => {
       console.log('src/actions/index.jsx deleteSmurf says:', response.data)
       dispatch({
         type: DELETE_SMURF,
-        payload: err.errorMessage,
+        payload: response.data,
       })
     })
+
     .catch(err =>{
       dispatch({
         type: ERROR,
-        payload: error.errorMessage,
+        payload: err.errorMessage,
       })
     })
 }
