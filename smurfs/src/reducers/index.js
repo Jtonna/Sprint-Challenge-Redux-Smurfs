@@ -12,19 +12,50 @@ const initState = {
 export const rootReducer = (state = initState, action) => {
   switch (action.type) {
     case LOADING:
-      return{
-        ...state,
-          loading: true,
-      }
+    return {
+      ...state,
+      loading: true
+    }
 
     case GET_SMURFS:
-      return{
-        ...state,
+        return {
+          ...state,
+            smurfs: action.payload,
+            loading: false
+          }
+        
+    case ADD_SMURF:
+        return {
+          ...state,
           smurfs: action.payload,
-          loading: false,
-      }
+          addingSmurf: true,
+          loading: false
+        }
 
-      default:
+    case UPDATE_SMURF:
+        return {
+          ...state,
+            smurfs: action.payload,
+            updatingSmurf: true,
+            loading: false 
+        }
+      
+    case DELETE_SMURF:
+        return {
+          ...state,
+            smurfs: action.payload,
+            deletingSmurf: true,
+            loading: false 
+        }
+      
+    case ERROR:
+        return {
+          ...state,
+          error: action.payload,
+          loading: false
+        }
+      
+    default:
         return state
   }
 }
