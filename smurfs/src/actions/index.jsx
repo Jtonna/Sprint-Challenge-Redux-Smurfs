@@ -13,7 +13,7 @@ export const addSmurf = newSmurf => dispatch => {
   })
 
   axios
-    .post(`http;//localhost:3333/smurfs`, newSmurf)
+    .post(`http://localhost:3333/smurfs`, newSmurf)
 
     .then(response => {
       console.log('src/actions/index.jsx addSmurf says:', response.data);

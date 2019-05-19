@@ -12,7 +12,7 @@ class AddSmurf extends React.Component{
 		}
 	}
 
-	inputHandeler = e => {
+	inputHandler = e => {
 		this.setState({
 			[e.target.name]: e.target.value,
 		})
@@ -44,4 +44,4 @@ const mapStateToProps = state => {
 	return {}
 }
 
-export default connect(mapStateToProps, {addSmurf: addSmurf})(addSmurf)
+export default connect(mapStateToProps, {addSmurf: addSmurf})(AddSmurf)
